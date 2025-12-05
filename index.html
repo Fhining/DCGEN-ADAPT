@@ -132,8 +132,8 @@
       <button onclick="processExcelData()">Procesar Datos de Excel</button>
     </div>
     <div class="section">
-      <label>Adaptación</label>
-      <input type="text" id="adaptacion">
+      <label>Traducción</label>
+      <input type="text" id="traduccion">
     </div>
 
     <div class="section">
@@ -170,7 +170,7 @@
 
   <div class="preview">
     <div class="preview-content" id="previewContent">
-      <div id="adaptacionPreview"></div>
+      <div id="traduccionPreview"></div>
       <br>
       <div id="direccionPreview"></div>
       <br>
@@ -181,9 +181,9 @@
       <br>
       <div id="adicionalesPreview"></div>
 <br>
-<div id="logosFinales" style="margin-top: 20px; display: flex; justify-content: center; gap: 50px;">
-<img src="img/kadraj.png" style="height: 80px; object-fit: contain;">
-<img src="img/caja.png" style="height: 80px; object-fit: contain;">
+<div id="logosFinales" style="margin-top: 0px; display: flex; justify-content: center; gap: 50px; align-items: center;">
+  <img src="img/kdlogo.png" style="height: 145px; object-fit: contain; margin-top: 1px;">
+  <img src="img/clogo.png" style="height: 80px; object-fit: contain;">
 </div>
 <br>
   
@@ -196,7 +196,7 @@
       });
     };
 
-    bindInput('adaptacion', 'adaptacionPreview', 'Adaptación: ');
+    bindInput('traduccion', 'traduccionPreview', 'Traducción: ');
     bindInput('direccion', 'direccionPreview', 'Dirección: ');
     bindInput('principales1', 'principales1Preview');
     bindInput('principales2', 'principales2Preview');
@@ -238,8 +238,8 @@
 
     function downloadPNG() {
       const content = document.getElementById('previewContent');
-      const adaptacion = document.getElementById('adaptacion').value.trim();
-      const filename = adaptacion ? `dubcard_${adaptacion.replace(/\s+/g, '_')}.jpg` : 'dubcard.jpg';
+      const traduccion = document.getElementById('traduccion').value.trim();
+      const filename = traduccion ? `dubcard_${traduccion.replace(/\s+/g, '_')}.jpg` : 'dubcard.jpg';
 
       html2canvas(content, {
         backgroundColor: '#000',
@@ -254,7 +254,7 @@
 
     // Función para inicializar la previsualización al cargar la página
     function initializePreview() {
-      document.getElementById('adaptacionPreview').textContent = 'Adaptación: ';
+      document.getElementById('traduccionPreview').textContent = 'Traducción: ';
       document.getElementById('direccionPreview').textContent = 'Dirección: ';
       document.getElementById('estudioPreview').textContent = 'Estudio: ';
       document.getElementById('adicionalesPreview').textContent = 'Voces adicionales: '; 
@@ -395,4 +395,12 @@
     }
   </script>
 
+
 </body></html>
+
+
+
+
+
+
+
