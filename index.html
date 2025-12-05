@@ -132,8 +132,8 @@
       <button onclick="processExcelData()">Procesar Datos de Excel</button>
     </div>
     <div class="section">
-      <label>Traducción</label>
-      <input type="text" id="traduccion">
+      <label>Adaptación</label>
+      <input type="text" id="adaptacion">
     </div>
 
     <div class="section">
@@ -170,7 +170,7 @@
 
   <div class="preview">
     <div class="preview-content" id="previewContent">
-      <div id="traduccionPreview"></div>
+      <div id="adaptacionPreview"></div>
       <br>
       <div id="direccionPreview"></div>
       <br>
@@ -196,7 +196,7 @@
       });
     };
 
-    bindInput('traduccion', 'traduccionPreview', 'Traducción: ');
+    bindInput('adaptacion', 'adaptacionPreview', 'Adaptación: ');
     bindInput('direccion', 'direccionPreview', 'Dirección: ');
     bindInput('principales1', 'principales1Preview');
     bindInput('principales2', 'principales2Preview');
@@ -238,8 +238,8 @@
 
     function downloadPNG() {
       const content = document.getElementById('previewContent');
-      const traduccion = document.getElementById('traduccion').value.trim();
-      const filename = traduccion ? `dubcard_${traduccion.replace(/\s+/g, '_')}.jpg` : 'dubcard.jpg';
+      const adaptacion = document.getElementById('adaptacion').value.trim();
+      const filename = adaptacion ? `dubcard_${adaptacion.replace(/\s+/g, '_')}.jpg` : 'dubcard.jpg';
 
       html2canvas(content, {
         backgroundColor: '#000',
@@ -254,7 +254,7 @@
 
     // Función para inicializar la previsualización al cargar la página
     function initializePreview() {
-      document.getElementById('traduccionPreview').textContent = 'Traducción: ';
+      document.getElementById('adaptacionPreview').textContent = 'Adaptación: ';
       document.getElementById('direccionPreview').textContent = 'Dirección: ';
       document.getElementById('estudioPreview').textContent = 'Estudio: ';
       document.getElementById('adicionalesPreview').textContent = 'Voces adicionales: '; 
@@ -397,6 +397,7 @@
 
 
 </body></html>
+
 
 
 
